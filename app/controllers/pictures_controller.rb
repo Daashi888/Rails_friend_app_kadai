@@ -20,6 +20,20 @@ end
     @picture = Picture.find(params[:id])
   end
 
+
+  def edit
+    @picture = Picture.find(params[:id])
+  end
+
+  def update
+    @picture = Picture.find(params[:id])
+    if @picture.update(picture_params)
+      redirect_to picture_path, notice: "投稿内容を編集しました！"
+    else
+      render :edit
+    end
+  end
+
   private
 
   def picture_params
