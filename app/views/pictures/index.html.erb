@@ -4,13 +4,13 @@
 
 <table>
   <tr>
-    <th>タイトル</th>
+    <th>画像</th>
     <th>内容</th>
   </tr>
 
 <% @pictures.each do |picture| %>
   <tr>
-    <td><%= picture.title %></td>
+    <td><%= image_tag picture.image.url, size:"160x160" %></td>
     <td><%= picture.content %></td>
 
     <td><%= link_to '詳細を確認する', picture_path(picture.id) %></td>
@@ -22,4 +22,4 @@
 
 <br>
 
-<%= link_to '新しく記事を投稿する', new_picture_path %>
+<%= link_to '新しく記事を投稿する', new_picture_path, class:"btn btn-success" %>
